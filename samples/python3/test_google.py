@@ -5,11 +5,17 @@ from selenium.webdriver.common.keys import Keys
 class ExampleTests(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        pass
 
     def test_google_title_matches_correct_value(self):
-        self.driver.get("http://www.google.com")
-        assert "Google" in self.driver.title
+        for i in range(1,155):
+            self.driver = webdriver.Chrome()
+            self.driver.get("https://willstdukannstdu.at/gif/gurke-omnomnom")
+
+            button =  self.driver.find_element_by_class_name("js-gifVoteButton")
+            # self.driver.manage().deleteAllCookies()
+            button.click()
+            self.driver.close()
 
     def tearDown(self):
-        self.driver.close()
+        pass
